@@ -56,5 +56,18 @@ class LinkController extends Controller
         return redirect()->away($link->url);
     }
 
-   
+    public function stats(string $code)
+    {
+        $data = Link::where('code', '=', $code)->first();
+
+        if (!$data) {
+            abort(404);
+        }
+
+        return response()->json([
+            'url' => $data->url,
+            "code" => $data->code,
+            "clicks" => $data->clicks,
+        ]);
+    }
 }
