@@ -41,4 +41,20 @@ class LinkController extends Controller
             'short_url' => url($code)
         ], 201);
     }
+
+    public function redirect(string $code)
+    {
+        $link = Link::where('code', '=', $code)->first();
+
+        if (!$link) {
+            abort(404);
+        }
+
+        $link->clicks++;
+        $link->save();
+
+        return redirect()->away($link->url);
+    }
+
+   
 }
