@@ -41,19 +41,9 @@ docker-compose exec app php artisan migrate
 
 # 5. Запуск приложения
 API доступно по:
-
 http://localhost:8000
 
 phpMyAdmin:
-
 http://localhost:8080
-
-логин: root
-пароль: root
-
-phpMyAdmin:
-
-http://localhost:8080
-
 логин: root
 пароль: root
