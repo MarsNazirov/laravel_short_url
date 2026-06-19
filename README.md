@@ -25,8 +25,6 @@
 
 ```bash
 # 1. Клонировать проект
-
-
 git clone git@github.com:MarsNazirov/laravel_short_url.git
 cd laravel_short_url
 
