@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
+
+            $table->string('original_url');
+            $table->string('code', 6)->unique();
+            $table->integer('clicks')->default(0);
+
+
             $table->timestamps();
         });
     }
